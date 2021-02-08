@@ -1,7 +1,7 @@
 node('master') {
-    stage('同步源码') {
-            git([url: 'git@gitee.com:dangruonan/jeesite4.git', branch: '${branch}'])
-    }
+//    stage('同步源码') {
+//            git([url: 'git@gitee.com:dangruonan/jeesite4.git', branch: '${branch}'])
+//    }
 
     stage('maven编译打包') {
         sh '''
