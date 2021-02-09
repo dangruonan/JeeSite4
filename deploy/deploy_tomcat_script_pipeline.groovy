@@ -16,7 +16,7 @@ node('master') {
             export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
             export PATH=${PATH}:$MAVENPATH:$USERPATH:$ALLURE:$JAVA_HOME/bin:$jmeter_path/lib/ext/ApacheJMeter_core.jar:$jmeter_path/lib/jorphan.jar:$jmeter_path/lib/logkit-2.0.jar
             export pwd=`pwd`
-            
+            ls
             cd JeeSite4
             export os_type=`uname`
             cd web/src/main/resources/config
