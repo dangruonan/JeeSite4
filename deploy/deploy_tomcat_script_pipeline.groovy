@@ -20,9 +20,7 @@ node('salve1') {
                 sed -i "s/mysql_user/${mysql_user}/g" application.yml
                 sed -i "s/mysql_pwd/${mysql_pwd}/g" application.yml
             fi
-            cd $pwd
-            ls
-            cd Jeesite4/root
+            cd $pwd/root
             ls
             mvn clean install -Dmaven.test.skip=true
             
