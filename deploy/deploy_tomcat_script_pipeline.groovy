@@ -16,6 +16,7 @@ node('master') {
             export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
             export PATH=${PATH}:$MAVENPATH:$USERPATH:$ALLURE:$JAVA_HOME/bin:$jmeter_path/lib/ext/ApacheJMeter_core.jar:$jmeter_path/lib/jorphan.jar:$jmeter_path/lib/logkit-2.0.jar
             export pwd=`pwd`
+            cd Jeesite4
             export os_type=`uname`
             cd web/src/main/resources/config
             if [[ "${os_type}" == "Darwin" ]]; then
@@ -29,7 +30,6 @@ node('master') {
                 sed -i "s/mysql_user/${mysql_user}/g" application.yml
                 sed -i "s/mysql_pwd/${mysql_pwd}/g" application.yml
             fi
-            
             cd $pwd/root
             mvn clean install -Dmaven.test.skip=true
             
