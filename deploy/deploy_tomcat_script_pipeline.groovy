@@ -6,7 +6,7 @@ node('master') {
 
     stage('maven编译打包') {
         sh '''
-            /Users/dangruonan/.bash_profile
+            ~/.bash_profile
             export pwd=`pwd`
             export os_type=`uname`
             cd web/src/main/resources/config
