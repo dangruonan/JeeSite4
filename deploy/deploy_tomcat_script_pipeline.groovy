@@ -6,7 +6,16 @@ node('master') {
 
     stage('maven编译打包') {
         sh '''
-            source ~/.bash_profile
+//            . ~/.bash_profile
+            export M2_HOME=/Users/dangruonan/apache-maven-3.6.3
+            export MAVENPATH=$PATH:$M2_HOME/bin
+            export USERPATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+            export ALLURE=/Users/dangruonan/IdeaProjects/allure-2.7.0/bin
+            export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home
+            export jmeter_path=/usr/local/Cellar/jmeter/5.3_1
+
+            export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
+            export PATH=${PATH}:$MAVENPATH:$USERPATH:$ALLURE:$JAVA_HOME/bin:$jmeter_path/lib/ext/ApacheJMeter_core.jar:$jmeter_path/lib/jorphan.jar:$jmeter_path/lib/logkit-2.0.jar
             export pwd=`pwd`
             export os_type=`uname`
             cd web/src/main/resources/config
