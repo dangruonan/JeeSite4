@@ -1,6 +1,6 @@
 node('salve1') {
     stage('同步源码') {
-           git([url: 'git@gitee.com:dangruonan/jeesite4.git', branch: '${branch}'])
+           git([url: 'https://gitee.com/thinkgem/jeesite4.git', branch: '${branch}'])
     }
 //    . ~/.bash_profile
     stage('maven编译打包') {
