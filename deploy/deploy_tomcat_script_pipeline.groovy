@@ -21,6 +21,7 @@ node('salve1') {
                 sed -i "s/mysql_pwd/${mysql_pwd}/g" application.yml
             fi
             cd $pwd/root
+            ls
             mvn clean install -Dmaven.test.skip=true
             
             cd $pwd/web
