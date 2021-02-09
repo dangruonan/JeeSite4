@@ -1,7 +1,7 @@
 node('salve1') {
-//    stage('同步源码') {
-//           git([url: 'git@gitee.com:dangruonan/jeesite4.git', branch: '${branch}'])
-//    }
+    stage('同步源码') {
+           git([url: 'git@gitee.com:dangruonan/jeesite4.git', branch: '${branch}'])
+    }
 //    . ~/.bash_profile
     stage('maven编译打包') {
         sh '''
@@ -13,7 +13,7 @@ node('salve1') {
             export jmeter_path=/usr/local/Cellar/jmeter/5.3_1
 
             export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
-            export PATH=${PATH}:$MAVENPATH:$USERPATH:$ALLURE:$JAVA_HOME/bin:$jmeter_path/lib/ext/ApacheJMeter_core.jar:$jmeter_path/lib/jorphan.jar:$jmeter_path/lib/logkit-2.0.jar
+            export PATH=${PATH}:$MAVENPATH:$JAVA_HOME/bin:$jmeter_path/lib/ext/ApacheJMeter_core.jar:$jmeter_path/lib/jorphan.jar:$jmeter_path/lib/logkit-2.0.jar
             export pwd=`pwd`
             ls
             cd JeeSite4
