@@ -1,12 +1,12 @@
 node('master') {
 //    stage('同步源码') {
-//            git([url: 'git@gitee.com:dangruonan/jeesite4.git', branch: '${branch}'])
+//           git([url: 'git@gitee.com:dangruonan/jeesite4.git', branch: '${branch}'])
 //    }
+//    . ~/.bash_profile
 
     stage('maven编译打包') {
         sh '''
-            . ~/.bash_profile
-            
+            /Users/dangruonan/.bash_profile
             export pwd=`pwd`
             export os_type=`uname`
             cd web/src/main/resources/config
