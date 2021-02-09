@@ -3,7 +3,9 @@ node('master') {
 //           git([url: 'git@gitee.com:dangruonan/jeesite4.git', branch: '${branch}'])
 //    }
 //    . ~/.bash_profile
-
+    agent {
+        label 'master'
+    }
     stage('maven编译打包') {
         sh '''
             export M2_HOME=/Users/dangruonan/apache-maven-3.6.3
