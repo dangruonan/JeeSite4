@@ -6,7 +6,6 @@ node('master') {
 
     stage('maven编译打包') {
         sh '''
-//            . ~/.bash_profile
             export M2_HOME=/Users/dangruonan/apache-maven-3.6.3
             export MAVENPATH=$PATH:$M2_HOME/bin
             export USERPATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
